@@ -8,7 +8,7 @@
         io.github.mlanlazc
     </groupId>
     <artifactId>
-        milanpetstoresdk
+        petstoremilan
     </artifactId>
     <version>
         1.0.0
@@ -16,17 +16,18 @@
 
     <!-- See https://central.sonatype.org/publish/requirements/#project-name-description-and-url -->
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>A Java SDK for Milanpetstoresdk.</description>
-    <url><!-- Eg. https://liblab.com/ -->
-    </url>
+    <description>A Java SDK for Milan Petstore SDK.</description>
 
     <!-- See https://central.sonatype.org/publish/requirements/#scm-information -->
     <scm>
-        <connection><!-- Eg. scm:git:git://github.com/username/repo.git -->
+        <connection>
+            scm:git:git://github.com/mlanlazc/petstore-milan.git
         </connection>
-        <developerConnection><!-- Eg. scm:git:ssh://github.com:username/repo.git -->
+        <developerConnection>
+            scm:git:ssh://github.com:mlanlazc/petstore-milan.git
         </developerConnection>
-        <url><!-- Eg. http://github.com/username/repo/tree/main -->
+        <url>
+            http://github.com/mlanlazc/petstore-milan/tree/main
         </url>
     </scm>
 
@@ -120,14 +121,13 @@
                 <plugins>
                     <!-- Maven deployment, see https://central.sonatype.org/publish/publish-maven -->
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.13</version>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.4.0</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            <publishingServerId>central</publishingServerId>
+                            <tokenAuth>true</tokenAuth>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -147,6 +147,9 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>3.5.0</version>
+                        <configuration>
+                            <doclint>none</doclint>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -160,6 +163,12 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>1.5</version>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
