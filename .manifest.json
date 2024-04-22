@@ -1,0 +1,113 @@
+{
+  "liblabVersion": "1.1.44",
+  "date": "2024-04-22T18:04:58.257Z",
+  "config": {
+    "authentication": {},
+    "deliveryType": "zip",
+    "languages": ["java"],
+    "inputFileName": "/tmp/resources/spec/open-api-spec.json",
+    "environmentVariables": [],
+    "fileOutput": "/tmp",
+    "tempDir": "/tmp/liblab-codegen-1.1.44-aPiGYV",
+    "inferServiceNames": false,
+    "httpLibrary": {
+      "name": "axios",
+      "packages": {
+        "axios": "^1.0.0"
+      },
+      "languages": ["javascript", "typescript"]
+    },
+    "auth": [],
+    "privateRepo": false,
+    "githubRef": "",
+    "baseUrl": "https://eox352uelardliu.m.pipedream.net",
+    "sdkName": "Milanpetstoresdk",
+    "sdkVersion": "1.0.0",
+    "retry": {
+      "enabled": true,
+      "maxAttempts": 3,
+      "retryDelay": 150
+    },
+    "customQueries": {
+      "paths": [],
+      "rawQueries": [],
+      "queriesData": []
+    },
+    "generateEnv": true,
+    "includeWatermark": false,
+    "license": {
+      "type": "MIT",
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "ignoreFiles": [".devcontainer"],
+    "alwaysInitializeOptionals": false,
+    "groupId": "io.github.mlanlazc",
+    "environments": [],
+    "reservedKeywords": {},
+    "deliveryMethods": [],
+    "bundle": false,
+    "exportClassDefault": false,
+    "responseHeaders": false,
+    "renameIllegalModelProperties": false,
+    "devContainer": false,
+    "strictVersion": false,
+    "authors": [],
+    "classifiers": [],
+    "projectUrls": {},
+    "homepage": "",
+    "enforceRequestValidation": false,
+    "denoteCommon": false,
+    "includeOptionalSnippetParameters": true,
+    "hooks": {
+      "enabled": false,
+      "sourceDir": ""
+    },
+    "spec": {
+      "type": "openapi",
+      "version": "3.0"
+    },
+    "usesFormData": false
+  },
+  "files": [
+    ".env.example",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "examples/pom.xml",
+    "examples/src/main/java/io/m/examples/Main.java",
+    "install.sh",
+    "pom.xml",
+    "src/main/java/io/github/mlanlazc/Configuration.java",
+    "src/main/java/io/github/mlanlazc/Environment.java",
+    "src/main/java/io/github/mlanlazc/Milanpetstoresdk.java",
+    "src/main/java/io/github/mlanlazc/exceptions/ApiException.java",
+    "src/main/java/io/github/mlanlazc/exceptions/ArgumentCannotBeNullException.java",
+    "src/main/java/io/github/mlanlazc/hooks/CustomHook.java",
+    "src/main/java/io/github/mlanlazc/hooks/model/Hook.java",
+    "src/main/java/io/github/mlanlazc/hooks/model/Request.java",
+    "src/main/java/io/github/mlanlazc/hooks/model/Response.java",
+    "src/main/java/io/github/mlanlazc/http/ModelConverter.java",
+    "src/main/java/io/github/mlanlazc/http/PetsClient.java",
+    "src/main/java/io/github/mlanlazc/http/ResponseWithHeaders.java",
+    "src/main/java/io/github/mlanlazc/http/interceptors/DefaultHeadersInterceptor.java",
+    "src/main/java/io/github/mlanlazc/http/interceptors/RetryInterceptor.java",
+    "src/main/java/io/github/mlanlazc/http/util/HttpArgumentConverter.java",
+    "src/main/java/io/github/mlanlazc/http/util/HttpHeaders.java",
+    "src/main/java/io/github/mlanlazc/http/util/HttpUrl.java",
+    "src/main/java/io/github/mlanlazc/models/BaseModel.java",
+    "src/main/java/io/github/mlanlazc/models/Error.java",
+    "src/main/java/io/github/mlanlazc/models/Pet.java",
+    "src/main/java/io/github/mlanlazc/models/README.md",
+    "src/main/java/io/github/mlanlazc/services/BaseService.java",
+    "src/main/java/io/github/mlanlazc/services/PetsService.java",
+    "src/main/java/io/github/mlanlazc/services/README.md",
+    "src/test/java/io/github/mlanlazc/TestTest.java",
+    "src/test/java/io/github/mlanlazc/helpers/TestModel.java",
+    "src/test/java/io/github/mlanlazc/http/ModelConverterTest.java",
+    "src/test/java/io/github/mlanlazc/models/ModelOneOfTests.java",
+    "src/test/java/io/github/mlanlazc/services/BaseServiceTest.java",
+    "src/test/java/io/github/mlanlazc/services/PetsServiceTest.java",
+    "src/test/java/utils/ArrayUtils.java"
+  ]
+}
