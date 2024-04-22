@@ -17,6 +17,7 @@
     <!-- See https://central.sonatype.org/publish/requirements/#project-name-description-and-url -->
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A Java SDK for Milan Petstore SDK.</description>
+    <url>https://liblab.com/</url>
 
     <!-- See https://central.sonatype.org/publish/requirements/#scm-information -->
     <scm>
