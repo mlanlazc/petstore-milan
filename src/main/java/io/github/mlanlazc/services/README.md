@@ -1,0 +1,136 @@
+# Milanpetstoresdk Services
+
+A list of all services and services methods.
+
+- Services
+
+  - [Pets](#pets)
+
+- [All Methods](#all-methods)
+
+## Pets
+
+| Method                      | Description             |
+| :-------------------------- | :---------------------- |
+| [createPets](#createpets)   | Create a pet            |
+| [listPets](#listpets)       | List all pets           |
+| [showPetById](#showpetbyid) | Info for a specific pet |
+
+## All Methods
+
+### **createPets**
+
+Create a pet
+
+- HTTP Method: POST
+- Endpoint: /pets
+
+**Parameters**
+| Name | Type| Required | Description |
+| :-------- | :----------| :----------| :----------|
+| input | Object | Required | Request body. |
+
+**Return Type**
+
+Returns a dict object.
+
+**Example Usage Code Snippet**
+
+```Java
+package io.github.mlanlazc.examples;
+
+import io.github.mlanlazc.Milanpetstoresdk;
+import io.github.mlanlazc.exceptions.ApiException;
+
+public class Main {
+
+  public static void main(String[] args) {
+    Milanpetstoresdk client = new Milanpetstoresdk();
+    try {
+      Object response = client.petsService.createPets();
+      System.out.println(response);
+    } catch (ApiException e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
+
+### **listPets**
+
+List all pets
+
+- HTTP Method: GET
+- Endpoint: /pets
+
+**Parameters**
+| Name | Type| Required | Description |
+| :-------- | :----------| :----------| :----------|
+| limit | Integer | Optional | How many items to return at one time (max 100) |
+
+**Return Type**
+
+[Pets](/src/main/java/io/milanpetstoresdk/models/README.md#pets)
+
+**Example Usage Code Snippet**
+
+```Java
+package io.github.mlanlazc.examples;
+
+import io.github.mlanlazc.Milanpetstoresdk;
+import io.github.mlanlazc.exceptions.ApiException;
+
+public class Main {
+
+  public static void main(String[] args) {
+    Milanpetstoresdk client = new Milanpetstoresdk();
+    try {
+      Object response = client.petsService.listPets(6);
+      System.out.println(response);
+    } catch (ApiException e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
+
+### **showPetById**
+
+Info for a specific pet
+
+- HTTP Method: GET
+- Endpoint: /pets/{petId}
+
+**Parameters**
+| Name | Type| Required | Description |
+| :-------- | :----------| :----------| :----------|
+| petId | String | Required | The id of the pet to retrieve |
+
+**Return Type**
+
+[Pet](/src/main/java/io/milanpetstoresdk/models/README.md#pet)
+
+**Example Usage Code Snippet**
+
+```Java
+package io.github.mlanlazc.examples;
+
+import io.github.mlanlazc.Milanpetstoresdk;
+import io.github.mlanlazc.exceptions.ApiException;
+
+public class Main {
+
+  public static void main(String[] args) {
+    Milanpetstoresdk client = new Milanpetstoresdk();
+    try {
+      Object response = client.petsService.showPetById("petIdSampleValue");
+      System.out.println(response);
+    } catch (ApiException e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
