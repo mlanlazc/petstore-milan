@@ -10,7 +10,7 @@ public class Main {
   public static void main(String[] args) {
     Petstoremilan client = new Petstoremilan();
     try {
-      Object response = client.petsService.listPets(7);
+      Object response = client.petsService.listPets(6);
       System.out.println(response);
     } catch (ApiException e) {
       e.printStackTrace();

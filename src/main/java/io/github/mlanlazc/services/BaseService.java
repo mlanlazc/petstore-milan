@@ -2,8 +2,13 @@
 
 package io.github.mlanlazc.services;
 
+import static io.github.mlanlazc.hooks.model.Request.toHookRequest;
+import static io.github.mlanlazc.hooks.model.Request.toOkHttpRequest;
+import static io.github.mlanlazc.hooks.model.Response.toHookResponse;
+
 import io.github.mlanlazc.Configuration;
 import io.github.mlanlazc.exceptions.ApiException;
+import io.github.mlanlazc.hooks.CustomHook;
 import io.github.mlanlazc.http.ModelConverter;
 import io.github.mlanlazc.models.*;
 import java.io.IOException;
@@ -21,9 +26,13 @@ public class BaseService {
   protected OkHttpClient httpClient;
   protected String serverUrl;
 
+  protected CustomHook customHook;
+
   public BaseService(OkHttpClient httpClient, String serverUrl) {
     this.httpClient = httpClient;
     this.serverUrl = serverUrl;
+
+    this.customHook = new CustomHook();
   }
 
   public void setBaseUrl(String serverUrl) {
@@ -33,9 +42,17 @@ public class BaseService {
   protected Response execute(Request request) throws ApiException {
     Response response;
     try {
+      io.github.mlanlazc.hooks.model.Request hookRequest = toHookRequest(request);
+      this.customHook.beforeRequest(hookRequest);
+      request = toOkHttpRequest(hookRequest);
+
       response = this.httpClient.newCall(request).execute();
+
+      this.customHook.afterResponse(hookRequest, toHookResponse(response));
     } catch (IOException e) {
       ApiException apiException = new ApiException(e.getMessage());
+
+      this.customHook.onError(toHookRequest(request), apiException);
 
       throw apiException;
     }
@@ -43,6 +60,8 @@ public class BaseService {
       return response;
     } else {
       ApiException apiException = new ApiException(response.code());
+
+      this.customHook.onError(toHookRequest(request), apiException);
 
       throw apiException;
     }

@@ -1,9 +1,9 @@
-# Petstoremilan Java SDK 1.0.1
+# Petstoremilan Java SDK 1.0.2
 
 A Java SDK for Petstoremilan.
 
-- API version: 1.0.1
-- SDK version: 1.0.1
+- API version: 1.0.2
+- SDK version: 1.0.2
 
 ## Table of Contents
 
@@ -79,7 +79,7 @@ public class Main {
   public static void main(String[] args) {
     Petstoremilan client = new Petstoremilan();
     try {
-        Object response = client.petsService.listPets(3);
+        Object response = client.petsService.listPets(4);
         System.out.println(response);
     } catch(ApiException e) {
         e.printStackTrace();

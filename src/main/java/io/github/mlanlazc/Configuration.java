@@ -4,7 +4,7 @@ package io.github.mlanlazc;
 
 public class Configuration {
 
-  public static final String USER_AGENT = "Petstoremilan/1.0.1 Java/" + getJavaVersion();
+  public static final String USER_AGENT = "Petstoremilan/1.0.2 Java/" + getJavaVersion();
 
   public static final String DEFAULT_API_KEY_HEADER = "X-API-KEY";
 
